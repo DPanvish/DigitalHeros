@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181A24"/>
+      <stop offset="100%" stop-color="#08090C"/>
+    </linearGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.25)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.04)"/>
+    </linearGradient>
+
+    <!-- Emerald Brand Gradient -->
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <!-- White Bevel Gradient for D -->
+    <linearGradient id="whiteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D1D5DB"/>
+    </linearGradient>
+
+    <!-- Soft Ambient Glow -->
+    <radialGradient id="ambientGlow" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Container Base -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="1.75"/>
+  <rect x="3" y="3" width="58" height="58" rx="15" fill="url(#ambientGlow)"/>
+
+  <!-- Letter D (Titanium Silver/White) -->
+  <path d="M12.5 18h10.5c6.5 0 10.5 4.5 10.5 14s-4 14-10.5 14H12.5V18zm5.5 5.5v17h5c3.5 0 5.5-2.8 5.5-8.5s-2-8.5-5.5-8.5h-5z" fill="url(#whiteGrad)"/>
+
+  <!-- Letter H (Performance Emerald) -->
+  <path d="M36.5 18h5.5v10.5h6.5V18H54v28h-5.5V34h-6.5v12h-5.5V18z" fill="url(#emeraldGrad)"/>
+
+  <!-- Philanthropy / Sparkle Accent (Gold) -->
+  <polygon points="49.5,9.5 51,12.5 54,14 51,15.5 49.5,18.5 48,15.5 45,14 48,12.5" fill="#F59E0B"/>
+</svg>
