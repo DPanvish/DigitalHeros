@@ -3,10 +3,11 @@ import jwt from 'jsonwebtoken';
 
 const generateToken = (res, userId) => {
   const token = jwt.sign({ id: userId }, process.env.JWT_SECRET, { expiresIn: '30d' });
+  const isProd = process.env.NODE_ENV === 'production' || !!process.env.VERCEL;
   res.cookie('jwt', token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV !== 'development',
-    sameSite: 'strict',
+    secure: isProd,
+    sameSite: isProd ? 'none' : 'lax',
     maxAge: 30 * 24 * 60 * 60 * 1000
   });
 };
@@ -74,7 +75,13 @@ export const loginUser = async (req, res) => {
 
 // POST /api/users/logout
 export const logoutUser = (req, res) => {
-  res.cookie('jwt', '', { httpOnly: true, expires: new Date(0) });
+  const isProd = process.env.NODE_ENV === 'production' || !!process.env.VERCEL;
+  res.cookie('jwt', '', {
+    httpOnly: true,
+    expires: new Date(0),
+    secure: isProd,
+    sameSite: isProd ? 'none' : 'lax'
+  });
   res.status(200).json({ message: 'Logged out successfully' });
 };
 
